@@ -32,12 +32,14 @@ class OutputConfig(BaseConfig):
                  callback: Callable,
                  visualizer: Visualizer = None,
                  visualizer_enabled: bool = False,
-                 record_path: Optional[str] = None):
+                 record_path: Optional[str] = None,
+                 main_thread: bool = True):
         self.output = output  # Output of the component (a callback)
         self.callback = callback  # Callback that gets called after syncing
         self.visualizer = visualizer
         self.visualizer_enabled = visualizer_enabled
         self.record_path = record_path
+        self.main_thread = main_thread
 
     def find_new_name(self, name: str, names: List[str]):
         while True:
