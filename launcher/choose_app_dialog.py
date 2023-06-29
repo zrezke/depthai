@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 import os
 from pathlib import Path
 
@@ -31,7 +31,7 @@ class CardWidget(QtWidgets.QWidget):
 
         # Make the button fill all available space
         button.setSizePolicy(
-            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding
+            QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding
         )
 
         # Add the widget to the UI
@@ -51,7 +51,7 @@ class CardWidget(QtWidgets.QWidget):
 class ChooseAppDialog(QtWidgets.QDialog):
     viewerChosen: bool = False
 
-    def __init__(self, parent: QtWidgets.QWidget=None):
+    def __init__(self, parent: QtWidgets.QWidget = None):
         super(ChooseAppDialog, self).__init__(parent)
         self.setWindowTitle("Choose an application")
 
